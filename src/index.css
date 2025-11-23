@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Noto Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./assets/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("woff2");
+}
+
+@theme {
+  --color-background: hsl(200, 60%, 99%);
+  --color-text: hsl(227, 75%, 14%);
+
+  --color-Neutral-900: hsl(227, 75%, 14%);
+  --color-Neutral-800: hsl(226, 25%, 17%);
+  --color-Neutral-700: hsl(225, 23%, 24%);
+  --color-Neutral-600: hsl(226, 11%, 37%);
+  --color-Neutral-300: hsl(0, 0%, 78%);
+  --color-Neutral-200: hsl(217, 61%, 90%);
+  --color-Neutral-100: hsl(0, 0%, 93%);
+  --color-Neutral-0: hsl(200, 60%, 99%);
+
+  /* Card Background - Light Mode */
+  --color-card-bg: hsl(0, 0%, 100%);
+  --color-card-border: hsl(217, 20%, 90%);
+
+  --color-btn-theme-bg: hsl(0, 0%, 90%);
+  --color-btn-hover-bg: hsl(210, 20%, 90%);
+
+  --color-Red-400: hsl(3, 86%, 64%);
+  --color-Red-500: hsl(3, 71%, 56%);
+  --color-Red-700: hsl(3, 77%, 44%);
+
+  --color-Gradient-A: #ebf2fc;
+  --color-Gradient-B: #eef8f9;
+
+  --font-Noto-Sans: "Noto Sans";
+}
+
+@layer theme {
+  .dark {
+    --color-background: hsl(210, 30%, 10%);
+    --color-text: hsl(0, 0%, 90%);
+
+    --color-Neutral-900: hsl(0, 0%, 90%);
+    --color-Neutral-800: hsl(210, 30%, 18%);
+    --color-Neutral-700: hsl(212, 25%, 30%);
+    --color-Neutral-600: hsl(215, 20%, 40%);
+    --color-Neutral-300: hsl(214, 20%, 60%);
+    --color-Neutral-200: hsl(210, 30%, 70%);
+    --color-Neutral-100: hsl(220, 40%, 80%);
+    --color-Neutral-0: hsl(210, 20%, 90%);
+
+    /* Card Background - Dark Mode */
+    --color-card-bg: hsl(220, 30%, 16%);
+    --color-card-border: hsl(216, 16%, 38%);
+
+    --color-btn-theme-bg: hsl(216, 16%, 38%);
+    --color-btn-hover-bg: hsl(212, 25%, 30%);
+
+    --color-Red-400: hsl(3, 86%, 54%);
+    --color-Red-500: hsl(3, 71%, 46%);
+    --color-Red-700: hsl(3, 77%, 34%);
+
+    --color-Gradient-A: #040918;
+    --color-Gradient-B: #091540;
+  }
+}
+
+body {
+  @apply bg-linear-to-b from-Gradient-A to-Gradient-B text-text font-Noto-Sans;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
